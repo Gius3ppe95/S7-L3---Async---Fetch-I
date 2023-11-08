@@ -61,6 +61,14 @@ function refreshCart() {
     });
   });
 }
+function removeFromCart(asin) {
+  cart.forEach((book, i) => {
+    if (book.asin === asin) {
+      cart.splice(i, 1);
+    }
+  });
+  refreshCart();
+}
 
 class Card {
   constructor(image, title, price, asin) {
